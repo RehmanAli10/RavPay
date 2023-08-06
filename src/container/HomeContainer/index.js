@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import HomeScreen from '../../screens/HomeScreen/HomeScreen';
+import {useNavigation} from '@react-navigation/native';
 
 const HomeContainer = ({handleShowDiscover}) => {
+  const navigation = useNavigation();
   const [showDiscover, setShowDiscover] = useState(true);
   const [showMsg, setShowMsg] = useState(false);
   const [rupees, setRupess] = useState('');
@@ -10,7 +12,7 @@ const HomeContainer = ({handleShowDiscover}) => {
 
   const getUserData = async () => {
     try {
-      const url = 'http://192.168.10.5:3000/users/1';
+      const url = 'http://192.168.10.4:3000/users/1';
       let result = await fetch(url);
       result = await result.json();
       setRupess(result.currentBalance);
@@ -34,6 +36,7 @@ const HomeContainer = ({handleShowDiscover}) => {
       showMsg={showMsg}
       setShowMsg={setShowMsg}
       transactionTime={transactionTime}
+      navigation={navigation}
     />
   );
 };

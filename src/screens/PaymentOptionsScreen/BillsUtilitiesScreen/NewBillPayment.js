@@ -21,7 +21,7 @@ const NewBillPayment = () => {
 
   const chooseBillerData = async () => {
     try {
-      const url = 'http://192.168.10.5:3000/billUtilities';
+      const url = 'http://192.168.10.4:3000/billUtilities';
       let result = await fetch(url);
       result = await result.json();
       setSearchData(result);

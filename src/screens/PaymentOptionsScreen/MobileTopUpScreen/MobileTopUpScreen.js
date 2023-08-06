@@ -1,9 +1,9 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
-import HeaderComponent from '../../component/HeaderComponent';
-import BackIcon from '../../../Assets/Icons/BackIcon';
 import {useNavigation} from '@react-navigation/native';
-import MobileTopUp from '../../../Assets/Icons/MobileTopUp';
+import HeaderComponent from '../../../component/HeaderComponent';
+import BackIcon from '../../../../Assets/Icons/BackIcon';
+import MobileTopUp from '../../../../Assets/Icons/MobileTopUp';
 
 const MobileTopUpScreen = () => {
   const navigation = useNavigation();
@@ -14,10 +14,12 @@ const MobileTopUpScreen = () => {
         handleBack={() => navigation.navigate('Home')}
       />
       <View style={styles.optionHeaderWrapper}>
-        <Text style={styles.optionHeaderText}>Mobile top up </Text>
+        <Text style={styles.optionHeaderText}>Choose operator </Text>
       </View>
-
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('NewMobileTopUp');
+        }}>
         <View style={styles.option2Wrapper}>
           <View style={styles.billsIcons}>
             <MobileTopUp height={30} width={30} />

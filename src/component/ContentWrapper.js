@@ -1,13 +1,13 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 
-const ContentWrapper = ({icon, text, secondIcon}) => {
+const ContentWrapper = ({icon, text, secondIcon, handlePress}) => {
   return (
     <View style={styles.userWrapper}>
       <View style={styles.icon}>{icon}</View>
-      <View style={styles.textWrapper}>
+      <TouchableOpacity style={styles.textWrapper} onPress={handlePress}>
         <Text style={styles.userName}>{text}</Text>
-      </View>
+      </TouchableOpacity>
       {secondIcon && <View style={styles.secondIcon}>{secondIcon}</View>}
     </View>
   );

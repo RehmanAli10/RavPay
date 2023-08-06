@@ -10,17 +10,14 @@ const BottomSheet = () => {
 
   const navigateToMobileTopUpScreen = () => {
     navigation.navigate('MobileTopUpScreen');
-    // closeBottomSheet();
   };
 
   const navigateToBillUtilities = () => {
     navigation.navigate('BillUtilities');
-    // closeBottomSheet();
   };
 
   const navigateToMoneyRequest = () => {
     navigation.navigate('MoneyRequest');
-    // closeBottomSheet();
   };
   return (
     <View style={styles.container}>

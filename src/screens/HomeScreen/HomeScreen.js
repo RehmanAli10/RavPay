@@ -25,11 +25,13 @@ const HomeScreen = memo(
     showMsg,
     setShowMsg,
     transactionTime,
+    navigation,
   }) => {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.mainCard}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('CurrentBalance')}>
             <LinearGradient
               colors={['#A0C49D', '#C2DEDC']}
               style={styles.currentBalanceWrapper}>
@@ -44,7 +46,7 @@ const HomeScreen = memo(
           </TouchableOpacity>
 
           <View style={styles.otherCards}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('LoadMoney')}>
               <LinearGradient
                 colors={['#C2DEDC', '#99DBF5']}
                 style={styles.loadMoney}>
@@ -56,7 +58,8 @@ const HomeScreen = memo(
               </LinearGradient>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('SendAndRequest')}>
               <LinearGradient
                 colors={['#eeaeca', '#94bbe9']}
                 style={styles.sendRequest}>

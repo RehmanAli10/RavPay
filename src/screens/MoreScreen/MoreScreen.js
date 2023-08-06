@@ -14,7 +14,7 @@ import Info from './Info';
 import ContentWrapper from '../../component/ContentWrapper';
 import LinearGradient from 'react-native-linear-gradient';
 
-const MoreScreen = memo(({userName, moneyLimit, passDiscover}) => {
+const MoreScreen = memo(({userName, moneyLimit, passDiscover, navigation}) => {
   return (
     <ScrollView style={styles.container}>
       {/* User Info */}
@@ -89,6 +89,7 @@ const MoreScreen = memo(({userName, moneyLimit, passDiscover}) => {
       <ContentWrapper
         icon={<LogOutIcon height={30} width={30} />}
         text={'Log out'}
+        handlePress={() => navigation.navigate('StartUp')}
       />
     </ScrollView>
   );
